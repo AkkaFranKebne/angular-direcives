@@ -15,7 +15,7 @@
             class="list-group-item"
             *ngFor="let numberOdd of numbersOdd"
             [ngClass]="{odd: numberOdd % 2 !==0}"
-            [ngStyle]="{backgroundColor: numberOdd % 2 !==0 ? 'yellow' : 'lightblue'}"
+            [ngStyle]="{backgroundColor: numberOdd % 2 !==0 ? 'lightgrey' : 'lightblue'}"
           >
             {{  numberOdd }}
           </li>
@@ -27,7 +27,7 @@
             class="list-group-item"
             *ngFor="let numberEven of numbersEven"
             [ngClass]="{odd: numberEven % 2 !==0}"
-            [ngStyle]="{backgroundColor: numberEven % 2 !==0 ? 'yellow' : 'lightblue'}"
+            [ngStyle]="{backgroundColor: numberEven % 2 !==0 ? 'lightgrey' : 'lightblue'}"
           >
             {{ numberEven }}
           </li>
@@ -35,6 +35,9 @@
       </ul>
       <ng-template [ngIf]="onlyOdd">
         <p>Only odd</p>
+      </ng-template>
+      <ng-template [ngIf]="!onlyOdd">
+        <p>Only even</p>
       </ng-template>
     </div>
   </div>
